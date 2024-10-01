@@ -1,0 +1,91 @@
+ul li {
+    list-style: none;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .menuContainer {
+    background-color: whitesmoke;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+  }
+  
+  .menuContainer > .image {
+    width: 75px;
+  }
+  
+  .menuContainer > .profile {
+    width: 35px;
+  }
+  
+  .menuContainer > .logo {
+    font-size: clamp(18px, 10vw, 42px)
+
+ }
+
+ .logo > span {
+  font-weight: bold;
+}
+
+  .hamburguer {
+    font-size: 48px;
+    cursor: pointer;
+    color: black;
+    display: block;
+  }
+  
+  .menu {
+    display: none;
+    background-color: whitesmoke;
+    padding: 15px;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .menuItem {
+    padding: 10px;
+    color: black;
+    text-align: center;
+  }
+  
+  .showMenu {
+    display: flex !important;
+  }
+  
+  @media (min-width: 768px) {
+    .menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: static;
+      width: auto;
+      order: 2;
+    }
+
+    .menu ul {
+      display: flex;
+      gap: 20px
+    }
+  
+    .hamburguer {
+      display: none;
+    }
+  
+    .menuContainer > .profile {
+      order: 3;
+    }
+  }
+  
