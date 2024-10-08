@@ -1,7 +1,7 @@
-import styles from "./Header.module.css"
+import styles from "./header.module.css"
 import { useState } from "react";
 
-export default function Footer() {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = function () {
