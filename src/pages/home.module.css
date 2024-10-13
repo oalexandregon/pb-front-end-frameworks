@@ -1,0 +1,10 @@
+.wrapper {
+    margin: 15px 0px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.wrapper  h2{
+    margin: 15px 0px;
+}
