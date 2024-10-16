@@ -39,12 +39,13 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Header />
-      <h2>Lançamentos</h2>
+      <h2 className={styles.mostRecentTitle}>Lançamentos</h2>
 
       {loading ? (
         <p>Carregando...</p> 
       ) : (
         <div className={styles.wrapper}>
+          
           <Carousel data={data} />
         </div>
       )}
