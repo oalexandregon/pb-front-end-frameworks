@@ -1,0 +1,47 @@
+/* components/Carousel/carousel.module.css */
+.carouselContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 16px 0;
+    width: 100%;
+    scrollbar-width: none; /* Para ocultar a barra de rolagem no Firefox */
+  }
+  
+  .carousel::-webkit-scrollbar {
+    display: none; /* Ocultar barra de rolagem no Chrome, Safari e Edge */
+  }
+  
+  .scrollButton {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .scrollButton:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .scrollButton:first-of-type {
+    left: 8px;
+  }
+  
+  .scrollButton:last-of-type {
+    right: 8px;
+  }
+  

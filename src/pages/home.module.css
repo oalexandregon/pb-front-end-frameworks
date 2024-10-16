@@ -3,8 +3,9 @@
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    padding: 0 
 }
 
-.wrapper  h2{
+.wrapper h2{
     margin: 15px 0px;
 }
