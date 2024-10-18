@@ -7,13 +7,29 @@
     display: flex;
     flex-direction: column;
     width: 300px;
-    min-width: 300px
+    min-width: 300px;
+    transition: background-color 0.3s ease;
+    position: relative;
  
+}
+
+.card:hover {
+    border: solid 1px black;
+}
+
+.card:hover .imgText {
+    display: block;
+}
+
+.card:hover .imageContainer > img {
+    background-color: black;
 }
 
 .imageContainer {
     height: auto;
     border-radius: 15px;
+    position: relative;
+    
 }
 
 .imageContainer img {
@@ -22,8 +38,17 @@
     object-fit: cover;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+    
 }
 
 .content {
     padding: 15px;
+}
+
+.imgText {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    display: none;
 }

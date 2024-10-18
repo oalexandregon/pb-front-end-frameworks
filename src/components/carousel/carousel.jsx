@@ -1,4 +1,3 @@
-// components/Carousel/Carousel.jsx
 import { useRef } from "react";
 import styles from "./carousel.module.css";
 import Card from "../card/card";
@@ -6,11 +5,11 @@ import Card from "../card/card";
 export default function Carousel({ data }) {
   const carouselRef = useRef(null);
 
-  // Função para rolar à esquerda
+
   const scrollLeft = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({
-        left: -300, // Ajuste o valor conforme necessário
+        left: -300, 
         behavior: "smooth",
       });
     }
