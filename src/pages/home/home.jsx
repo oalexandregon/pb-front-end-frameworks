@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import {fetchPopularFilms, fetchNewFilms} from "../../services/api.js";
 import Header from "../../components/header/header.jsx";
-import Carousel from "../../components/carousel/carousel.jsx"
+import CarouselLatest from "../../components/carousel/carouselLatest.jsx"
+import CarouselPopular from "../../components/carousel/CarouselPopular.jsx"
 import styles from "./home.module.css";
 import Footer from '../../components/footer/footer.jsx/footer.jsx';
 
@@ -32,24 +33,24 @@ export default function Home() {
     loadFilms();
   }, []);
   
-  console.log("Outro ", data);
-  console.log("Popular: ", popularData);
 
   return (
     <div className={styles.container}>
       <Header />
-
+      <div className={styles.wrapper}>
       {loading ? (
         <p>Carregando...</p> 
       ) : (
         <div className={styles.wrapper}>
 
           <h2 className={styles.mostRecentTitle}>Lançamentos</h2>
-          <Carousel data={data} />
+          <CarouselLatest data={data} />
           <h2 className={styles.mostRecentTitle}>Em alta</h2>
-          <Carousel data={popularData} />
+          <CarouselPopular data={popularData} />
         </div>
       )}
+      </div>
+      
 
       <Footer className={styles.footer} />
     </div>

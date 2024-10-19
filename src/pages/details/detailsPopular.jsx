@@ -2,11 +2,11 @@ import Footer from '../../components/footer/footer.jsx/footer.jsx';
 import Header from "../../components/header/header.jsx";
 import styles from "./details.module.css";
 
-import { fetchNewFilms } from "../../services/api.js";
+import { fetchPopularFilms } from "../../services/api.js";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function DetailsLatest() {
+export default function DetailsPopular() {
 
   const { id } = useParams();
   const [filmInfo, setFilmInfo] = useState({});
@@ -15,7 +15,8 @@ export default function DetailsLatest() {
   useEffect(() => {
     const loadFilms = async () => {
       try {
-        const newFilmsData = await fetchNewFilms();
+
+        const newFilmsData = await fetchPopularFilms();
         const selectedFilm = newFilmsData.find((film) => film.id === parseInt(id));
 
         if (selectedFilm) {
@@ -42,9 +43,11 @@ export default function DetailsLatest() {
     <div className={styles.container}>
 
       <div className={styles.wrapper}>
+
+
         <Header />
 
-        {loading ? (<p> Carreggando...</p>) : (
+        {loading ? (<p> Carregando...</p>) : (
           <>
             <div className={styles.filmInfoContainer}>
               <h1>{filmInfo.title}</h1>
@@ -69,7 +72,7 @@ export default function DetailsLatest() {
 
       </div>
 
-      <Footer />
+      <Footer className={styles.footer} />
     </div>
   );
 }

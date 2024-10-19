@@ -1,7 +1,7 @@
 import styles from "./card.module.css";
 import {Link} from "react-router-dom";
 
-export default function Card({ data }) {
+export default function CardLatest({ data }) {
 
 
     const imageUrl = data.backdrop_path
@@ -10,13 +10,13 @@ export default function Card({ data }) {
 
     return (
         <div className={styles.card}>
-            <Link to={`detalhes/${data.id}`}>
+            <Link to={`lancamentos/${data.id}`}>
             <div className={styles.imageContainer}>
                 <img src={imageUrl} alt={data.name || "Imagem de TV Show"} />
                 <p className={styles.imgText}>Ver mais</p>
             </div>
             <div className={styles.content}>
-                <p>{data.original_title}</p>
+                <p>{data.title}</p>
                 <p>{`Classificação: ${data.vote_average}`}</p>
             </div>
             </Link>

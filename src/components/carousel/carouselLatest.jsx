@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import styles from "./carousel.module.css";
-import Card from "../card/card";
+import CardLatest from "../card/cardLatest";
 
-export default function Carousel({ data }) {
+export default function CarouselLatest({ data }) {
   const carouselRef = useRef(null);
 
 
@@ -33,7 +33,7 @@ export default function Carousel({ data }) {
 
       <div className={styles.carousel} ref={carouselRef}>
         {data.map((show, index) => (
-          <Card data={show} key={index} />
+          <CardLatest data={show} key={index} />
         ))}
       </div>
 
