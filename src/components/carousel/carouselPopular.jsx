@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import styles from "./carousel.module.css";
-import CardPopular from "../card/CardPopular";
+import CardPopular from "../card/cardPopular";
 
 export default function CarouselPopular({ data }) {
   const carouselRef = useRef(null);
