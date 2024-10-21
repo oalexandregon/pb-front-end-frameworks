@@ -1,4 +1,4 @@
-import Footer from '../../components/footer/footer.jsx/footer.jsx';
+import Footer from '../../components/footer/footer.jsx';
 import Header from "../../components/header/header.jsx";
 import styles from "./details.module.css";
 

@@ -4,7 +4,7 @@ import Header from "../../components/header/header.jsx";
 import CarouselLatest from "../../components/carousel/carouselLatest.jsx"
 import CarouselPopular from "../../components/carousel/CarouselPopular.jsx"
 import styles from "./home.module.css";
-import Footer from '../../components/footer/footer.jsx/footer.jsx';
+import Footer from '../../components/footer/footer.jsx';
 
 
 
