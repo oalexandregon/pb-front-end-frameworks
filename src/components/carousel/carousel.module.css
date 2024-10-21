@@ -3,17 +3,15 @@
     align-items: center;
     position: relative;
     width: 100%;
-    overflow: hidden;
-    
+    overflow-x: hidden;
   }
   
   .carousel {
     display: flex;
     gap: 16px;
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     padding: 16px 0;
-    width: 100%;
     scrollbar-width: none; 
     padding: 15px;
   }

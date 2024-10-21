@@ -13,7 +13,6 @@ export default function CardLatest({ data }) {
             <Link to={`lancamentos/${data.id}`}>
             <div className={styles.imageContainer}>
                 <img src={imageUrl} alt={data.name || "Imagem de TV Show"} />
-                <p className={styles.imgText}>Ver mais</p>
             </div>
             <div className={styles.content}>
                 <p>{data.title}</p>

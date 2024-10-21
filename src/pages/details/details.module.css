@@ -8,8 +8,6 @@
     flex: 1;
 }
 
-.footer {
-    margin-top: auto; 
-    bottom: 0;
-    justify-self: flex-end;
+.filmInfoContainer, .divider, .filmDetails {
+    padding: 15px;
 }
