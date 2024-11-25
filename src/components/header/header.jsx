@@ -14,12 +14,25 @@ export default function Header() {
       <p className={styles.hamburguer} onClick={toggleMenu}>
         ≡
       </p>
-      <p className={styles.logo}> <Link>
-      </Link>Infnet<span>Flix</span></p>
+
+      <Link to={"/"} className={styles.logo}>
+        <p >
+          Infnet<span>Flix</span>
+        </p>
+      </Link>
+
 
 
       <nav className={`${styles.menu} ${isMenuOpen ? styles.showMenu : ""}`}>
         <ul>
+        <li >
+            <Link
+              className={styles.menuItem}
+              to="/">
+              Home
+            </Link>
+          </li>
+
           <li >
             <Link
               className={styles.menuItem}

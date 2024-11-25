@@ -2,7 +2,7 @@ import Footer from '../../components/footer/footer.jsx';
 import Header from "../../components/header/header.jsx";
 import styles from "./details.module.css";
 
-import { fetchNewFilms, fetchPopularFilms } from "../../services/api.js";
+import { fetchNewFilms, fetchPopularFilms, fetchTvSeries } from "../../services/api.js";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -11,20 +11,27 @@ export default function DetailsLatest() {
     const { id } = useParams();
     const [filmInfo, setFilmInfo] = useState({});
     const [loading, setLoading] = useState(true);
+    const [isTVShow, setIsTVShow] = useState(false)
 
     useEffect(() => {
         const loadFilms = async () => {
             try {
                 const popularFilmsData = await fetchPopularFilms();
                 const newFilmsData = await fetchNewFilms();
+                const popularTvShows = await fetchTvSeries();
 
                 const selectedPopularFilm = popularFilmsData.find((film) => film.id === parseInt(id));
                 const selectedNewFilm = newFilmsData.find((film) => film.id === parseInt(id));
+                const selectedPopularTvShows = popularTvShows.find((film) => film.id === parseInt(id));
 
                 if (selectedNewFilm) {
                     setFilmInfo(selectedNewFilm);
                 } else if (selectedPopularFilm) {
                     setFilmInfo(selectedPopularFilm);
+                } else if (selectedPopularTvShows) {
+                    setFilmInfo(selectedPopularTvShows);
+                    setIsTVShow(true);
+
                 } else {
                     console.error('Filme não encontrado');
                 }
@@ -54,7 +61,7 @@ export default function DetailsLatest() {
                 {loading ? (<p> Carregando...</p>) : (
                     <>
                         <div className={styles.filmInfoContainer}>
-                            <h1>{filmInfo.title}</h1>
+                            <h1>{isTVShow ? filmInfo.name : filmInfo.title}</h1>
                             <p>{filmInfo.overview}</p>
                         </div>
 
@@ -63,7 +70,7 @@ export default function DetailsLatest() {
                         </div>
 
                         <div className={styles.filmDetails}>
-                            <p>{`Lançamento: ${filmInfo.release_date}`}</p>
+                            <p>{`Lançamento: ${isTVShow ? filmInfo.first_air_date : filmInfo.release_date}`}</p>
                             <p>{`Nota: ${filmInfo.vote_average}`}</p>
                             <p>{`Número de votos: ${filmInfo.vote_count}`}</p>
                             <p>{`Popularidade: ${filmInfo.popularity}`}</p>

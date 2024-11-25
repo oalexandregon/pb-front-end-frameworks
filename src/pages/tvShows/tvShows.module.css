@@ -1,25 +1,29 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100vh; 
 }
 
 .wrapper {
-    margin: 15px 0px;
-    gap: 20px;
     display: flex;
     flex-wrap: wrap;
+    gap: 5px;
     padding: 20px;
-    overflow: hidden;
-    flex: 1,
+    justify-content: center;
+    flex: 1; 
 }
 
-.favoritesTitle {
-    margin-top: 15px;
-    padding-left: 15px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+.wrapper > h1 {
+   margin-bottom: 20px; 
+}
+
+
+.tvShows {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px; 
+    justify-content: center; 
+    
 }
 
 .noFavoritesMessage {

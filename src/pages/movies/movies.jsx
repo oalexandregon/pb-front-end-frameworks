@@ -1,11 +1,11 @@
 import Header from "../../components/header/header.jsx";
-import styles from "./tvShows.module.css";
+import styles from "./movies.module.css";
 import Footer from '../../components/footer/footer.jsx';
 import Card from "../../components/card/card.jsx"
-import { fetchTvSeries } from "../../services/api.js";
+import { fetchNewFilms } from "../../services/api.js";
 import { useState, useEffect } from "react";
 
-export default function TvSeries() {
+export default function Movies() {
 
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState({});
@@ -13,12 +13,12 @@ export default function TvSeries() {
     useEffect(() => {
         const loadTVSeries = async () => {
             try {
-                const newTvSeries = await fetchTvSeries();
+                const newMovies = await fetchNewFilms();
 
 
 
-                setData(newTvSeries);
-                console.log("TV Series", newTvSeries)
+                setData(newMovies);
+                console.log("TV Series", newMovies)
             } catch (error) {
                 console.error('Erro ao carregar as séries de TV:', error);
             } finally {
@@ -39,10 +39,10 @@ export default function TvSeries() {
                 ) : (
                     <div className={styles.wrapper}>
 
-                        <h1 className={styles.favoritesTitle}>Popular na TV</h1>
+                        <h1 className={styles.favoritesTitle}>Novos Filmes</h1>
                         <div className={styles.tvShows}>
                         {data.map((item) => (
-          <Card key={item.id} data={item} type="TV" />
+          <Card key={item.id} data={item} />
         ))}
                         </div>
                         
