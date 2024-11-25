@@ -11,6 +11,7 @@ const options = {
     try {
       const response = await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
       const films = await response.json();
+     
       return films.results; 
     } catch (err) {
       console.error('Erro ao buscar filmes:', err);

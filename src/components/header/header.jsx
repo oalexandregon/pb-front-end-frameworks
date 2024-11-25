@@ -1,5 +1,6 @@
 import styles from "./header.module.css"
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,18 +14,36 @@ export default function Header() {
       <p className={styles.hamburguer} onClick={toggleMenu}>
         ≡
       </p>
-      <p className={styles.logo}>Infnet<span>Flix</span></p>
+      <p className={styles.logo}> <Link>
+      </Link>Infnet<span>Flix</span></p>
 
 
       <nav className={`${styles.menu} ${isMenuOpen ? styles.showMenu : ""}`}>
         <ul>
-          <li className={styles.menuItem}>Lançamentos</li>
-          <li className={styles.menuItem}>Recomendados</li>
-          <li className={styles.menuItem}>Filmes</li>
-          <li className={styles.menuItem}>Séries</li>
+          <li >
+            <Link
+              className={styles.menuItem}
+              to="/favoritos">
+              Meus Favoritos
+            </Link>
+          </li>
+          <li >
+            <Link
+              className={styles.menuItem}
+              to="/filmes">
+              Filmes
+            </Link>
+          </li>
+          <li >
+            <Link
+              className={styles.menuItem}
+              to="/tv">
+              Programas de TV
+            </Link>
+          </li>
         </ul>
-
       </nav>
+
     </header>
   );
 }

@@ -9,7 +9,7 @@ ul li {
   }
   
   .menuContainer {
-    background-color: whitesmoke;
+    background-color: rgb(20, 20, 20);
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -21,25 +21,27 @@ ul li {
  
   
   .menuContainer > .logo {
-    font-size: clamp(18px, 10vw, 42px)
+    font-size: clamp(18px, 10vw, 42px);
+    color: rgb(212, 54, 54)
 
  }
 
  .logo > span {
   font-weight: bold;
+  color: rgb(212, 14, 14)
 }
 
   .hamburguer {
     font-size: 48px;
     cursor: pointer;
-    color: black;
+    color: azure;
     display: block;
     order: 2;
   }
   
   .menu {
     display: none;
-    background-color: whitesmoke;
+    background-color: rgb(20, 20, 20);
     padding: 15px;
     flex-direction: column;
     position: absolute;
@@ -52,8 +54,12 @@ ul li {
   
   .menuItem {
     padding: 10px;
-    color: black;
+    color: azure;
     text-align: center;
+  }
+
+  .menuItem:hover {
+    color: rgb(212, 54, 54); 
   }
   
   .showMenu {

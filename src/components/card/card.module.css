@@ -1,31 +1,74 @@
 .card {
-    background-color: whitesmoke;
-    border-radius: 15px;
-    -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
     display: flex;
     flex-direction: column;
     width: 300px;
     min-width: 300px;
-    transition: background-color 0.3s ease;
+    overflow: hidden; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
- 
 }
 
 .card:hover {
-    border: solid 1px black;
-}
-
-.card:hover .imgText {
-    display: block;
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25); 
+    border: none; 
 }
 
 .imageContainer {
-    height: auto;
-    border-radius: 15px;
     position: relative;
+    width: 100%;
+    height: 180px; 
     overflow: hidden;
+}
+
+.imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+}
+
+.imageContainer:hover img {
+    transform: scale(1.1); 
+}
+
+.content {
+    padding: 20px;
+    text-align: center; 
+}
+
+.content p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333; 
+}
+
+.favoriteIcon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    z-index: 2;
+}
+
+.favoriteIcon:hover {
+    transform: scale(1.2); 
+}
+
+.filledIcon {
+    color: #e63946; 
+}
+
+.borderIcon {
+    color: #a8a8a8; 
+}
+
+.card:hover .content p {
+    color: #555; 
 }
 
 .imageContainer::after {
@@ -39,19 +82,6 @@
     transition: background-color 0.3s ease;
 }
 
-
-.imageContainer img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-    transition: opacity 0.3s ease;
-    
+.card:hover .imageContainer::after {
+    background-color: rgba(0, 0, 0, 0.15); /* Adiciona um sombreado suave ao passar o mouse */
 }
-
-.content {
-    padding: 15px;
-}
-
-

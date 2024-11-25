@@ -5,6 +5,7 @@ import CarouselLatest from "../../components/carousel/carouselLatest.jsx"
 import CarouselPopular from "../../components/carousel/carouselPopular.jsx"
 import styles from "./home.module.css";
 import Footer from '../../components/footer/footer.jsx';
+import Carousel from '../../components/carousel/carousel.jsx';
 
 
 
@@ -23,6 +24,8 @@ export default function Home() {
   
         setData(newFilmsData);
         setPopularData(popularFilmsData);
+        console.log("Novos",newFilmsData)
+        console.log("Populares",popularData);
       } catch (error) {
         console.error('Erro ao carregar os filmes:', error);
       } finally {
@@ -44,9 +47,9 @@ export default function Home() {
         <div className={styles.wrapper}>
 
           <h2 className={styles.mostRecentTitle}>Lançamentos</h2>
-          <CarouselLatest data={data} />
+          <Carousel data={data} />
           <h2 className={styles.mostRecentTitle}>Em alta</h2>
-          <CarouselPopular data={popularData} />
+          <Carousel data={popularData} />
         </div>
       )}
       </div>

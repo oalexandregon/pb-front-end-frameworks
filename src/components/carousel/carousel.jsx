@@ -1,25 +1,23 @@
 import { useRef } from "react";
 import styles from "./carousel.module.css";
-import CardLatest from "../card/cardLatest";
+import Card from "../card/card";
 
-export default function CarouselLatest({ data }) {
+export default function Carousel({ data }) {
   const carouselRef = useRef(null);
-
 
   const scrollLeft = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({
-        left: -300, 
+        left: -300,
         behavior: "smooth",
       });
     }
   };
 
-
   const scrollRight = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({
-        left: 300, 
+        left: 300,
         behavior: "smooth",
       });
     }
@@ -28,17 +26,17 @@ export default function CarouselLatest({ data }) {
   return (
     <div className={styles.carouselContainer}>
       <button className={styles.scrollButton} onClick={scrollLeft}>
-        &#10094; 
+        &#10094;
       </button>
 
       <div className={styles.carousel} ref={carouselRef}>
-        {data.map((show, index) => (
-          <CardLatest data={show} key={index} />
+        {data.map((item) => (
+          <Card key={item.id} data={item} />
         ))}
       </div>
 
       <button className={styles.scrollButton} onClick={scrollRight}>
-        &#10095; 
+        &#10095;
       </button>
     </div>
   );

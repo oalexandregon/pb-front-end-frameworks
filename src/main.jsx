@@ -1,14 +1,13 @@
 import { createRoot } from 'react-dom/client'
 import React from 'react'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { AppProvider } from "./context";
 import Home from "./pages/home/home"
 import DetailsLatest from "./pages/details/detailsLatest"
 import DetailsPopular from "./pages/details/detailsPopular"
+import Details from "./pages/details/details"
 import "./global.css";
+import Favorites from "./pages/favorites/favorites"
 
 const router = createBrowserRouter([
   {
@@ -16,12 +15,20 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/lancamentos/:id",
-    element: <DetailsLatest />,
+    path: "/:id",
+    element: <Details />,
   },
   {
-    path: "/populares/:id",
-    element: <DetailsPopular />,
+    path: "/favoritos/",
+    element: <Favorites />,
+  },
+  {
+    path: "/filmes/",
+    element: <Favorites />,
+  },
+  {
+    path: "/tv/",
+    element: <Favorites />,
   },
 ]);
 
@@ -31,7 +38,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AppProvider>
+      <RouterProvider router={router} />
+    </AppProvider>
   </React.StrictMode>
 )
 
