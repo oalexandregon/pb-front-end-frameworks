@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import {fetchPopularFilms, fetchNewFilms} from "../../services/api.js";
 import Header from "../../components/header/header.jsx";
-import CarouselLatest from "../../components/carousel/carouselLatest.jsx"
-import CarouselPopular from "../../components/carousel/carouselPopular.jsx"
 import styles from "./home.module.css";
 import Footer from '../../components/footer/footer.jsx';
 import Carousel from '../../components/carousel/carousel.jsx';

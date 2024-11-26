@@ -3,11 +3,11 @@ import React from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AppProvider } from "./context";
 import Home from "./pages/home/home"
-import DetailsLatest from "./pages/details/detailsLatest"
-import DetailsPopular from "./pages/details/detailsPopular"
 import Details from "./pages/details/details"
 import "./global.css";
 import Favorites from "./pages/favorites/favorites"
+import TvSeries from './pages/tvShows/tvShows';
+import Movies from "./pages/movies/movies"
 
 const router = createBrowserRouter([
   {
@@ -24,11 +24,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/filmes/",
-    element: <Favorites />,
+    element: <Movies />,
   },
   {
     path: "/tv/",
-    element: <Favorites />,
+    element: <TvSeries />,
   },
 ]);
 

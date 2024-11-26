@@ -4,7 +4,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useAppContext } from "../../context";
 
-export default function Card({ data }) {
+export default function Card({ data, type }) {
   const { favorites, toggleFavorite } = useAppContext();
 
   const isFavorite = favorites.some((fav) => fav.id === data.id);
@@ -20,7 +20,7 @@ export default function Card({ data }) {
           <img src={imageUrl} alt={data.name || "Imagem de TV Show"} />
         </div>
         <div className={styles.content}>
-          <p>{data.title}</p>
+          <p>{type === "TV" ? data.name : data.title}</p>
           <p>{`Classificação: ${data.vote_average}`}</p>
         </div>
       </Link>
