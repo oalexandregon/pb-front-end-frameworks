@@ -1,10 +1,10 @@
-const apiKey = import.
+const apiKey = import.meta.env.VITE_TMDB_API_KEY
 
 const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDViMGVlN2U3ZjgyZDNmYjk5ZWQyNzhlYTViZDExMCIsIm5iZiI6MTcyOTAzNDUwMi4wOTc0MzksInN1YiI6IjY2OWVmOGZjZDllZWI3MTYwMjJlNjExNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.f7h6AJgbrji_W12VZ7lF-f3i-_SO5YzphC62CDLpgMU'
+    Authorization: `Bearer ${apiKey}`
   }
 };
 
