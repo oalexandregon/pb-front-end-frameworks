@@ -21,7 +21,7 @@ export default function Card({ data, type }) {
           <img src={imageUrl} alt={data.name || "Imagem de TV Show"} />
         </div>
         <div className={styles.content}>
-          <p>{type === "TV" ? data.name : data.title}</p>
+          <p>{type === "TV" ? data.original_name : data.title}</p>
           <p>{`Classificação: ${data.vote_average}`}</p>
         </div>
       </Link>

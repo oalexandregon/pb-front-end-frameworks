@@ -1,3 +1,5 @@
+
+
 .wrapper {
     margin: 15px 0px;
     display: flex;
@@ -10,5 +12,6 @@
 .mostRecentTitle{
     margin-top: 15px;
     padding-left: 15px;
+    color: black;
 }
 
