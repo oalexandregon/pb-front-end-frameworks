@@ -1,7 +1,7 @@
 import Header from "../../components/header/header.jsx";
 import Footer from "../../components/footer/footer.jsx";
 import Card from "../../components/card/card.jsx";
-import SearchBar from "../../components/searchBar/searchBar.jsx"; // Adicionado o SearchBar
+import SearchBar from "../../components/searchBar/searchBar.jsx"; 
 import { fetchTvSeries } from "../../services/api.js";
 import { useState, useEffect } from "react";
 import styles from "./tvShows.module.css";
@@ -9,14 +9,14 @@ import styles from "./tvShows.module.css";
 export default function TvSeries() {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState([]);
-    const [filteredData, setFilteredData] = useState([]); // Adicionado estado para dados filtrados
+    const [filteredData, setFilteredData] = useState([]); 
 
     useEffect(() => {
         const loadTVSeries = async () => {
             try {
                 const newTvSeries = await fetchTvSeries();
                 setData(newTvSeries);
-                setFilteredData(newTvSeries); // Inicializa os dados filtrados com todos os itens
+                setFilteredData(newTvSeries); 
                 console.log("TV Series", newTvSeries);
             } catch (error) {
                 console.error("Erro ao carregar as séries de TV:", error);
@@ -33,7 +33,7 @@ export default function TvSeries() {
             <Header />
 
             <div className={styles.wrapper}>
-                <SearchBar data={data} setFilteredData={setFilteredData} /> {/* Adicionado SearchBar */}
+                <SearchBar data={data} setFilteredData={setFilteredData} type="TV" /> 
 
                 {loading ? (
                     <p>Carregando...</p>

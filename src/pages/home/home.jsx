@@ -22,8 +22,6 @@ export default function Home() {
   
         setData(newFilmsData);
         setPopularData(popularFilmsData);
-        console.log("Novos",newFilmsData)
-        console.log("Populares",popularData);
       } catch (error) {
         console.error('Erro ao carregar os filmes:', error);
       } finally {

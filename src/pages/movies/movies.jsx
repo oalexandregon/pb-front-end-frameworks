@@ -9,7 +9,7 @@ import styles from "./movies.module.css";
 export default function Movies() {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState([]);
-    const [filteredData, setFilteredData] = useState([]); // 
+    const [filteredData, setFilteredData] = useState([]); 
 
    
 
@@ -36,7 +36,7 @@ export default function Movies() {
             <Header />
 
             <div className={styles.wrapper}>
-                <SearchBar data={data} setFilteredData={setFilteredData} />
+                <SearchBar data={data} setFilteredData={setFilteredData} type="movie" />
 
                 {loading ? (
                     <p>Carregando...</p>
