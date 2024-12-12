@@ -8,6 +8,8 @@ import "./global.css";
 import Favorites from "./pages/favorites/favorites"
 import TvSeries from './pages/tvShows/tvShows';
 import Movies from "./pages/movies/movies"
+import SignUp from './pages/signUp/signUp';
+import SignIn from './pages/signIn/signIn';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
   {
     path: "/tv/",
     element: <TvSeries />,
+  },
+  {
+    path: "/signUp/",
+    element: <SignUp />,
+  },
+  {
+    path: "/signIn/",
+    element: <SignIn />,
   },
 ]);
 

@@ -1,12 +1,14 @@
 import React from 'react';
-import { useAuth } from '../authContext';
 import { Navigate } from 'react-router-dom';
-import Home from '../pages/home/home';
 
-const Routes = () => {
-  const { isAuthenticated } = useAuth();
+const ProtectedRoute = ({ children }) => {
+  const session = JSON.parse(localStorage.getItem('session'));
 
-  return isAuthenticated ? <Home /> : <Navigate to="/login" replace />;
+  if (!session || !session.loggedIn) {
+    return <Navigate to="/signIn" />;
+  }
+
+  return children;
 };
 
-export default Routes;
+export default ProtectedRoute;
