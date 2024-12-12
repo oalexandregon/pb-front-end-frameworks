@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, React} from "react";
 import styles from "./carousel.module.css";
 import Card from "../card/card";
 

@@ -23,6 +23,7 @@ export const fetchPopularFilms = async () => {
   try {
     const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
     const films = await response.json();
+    console.log(films)
     return films.results;
   } catch (err) {
     console.error('Erro ao buscar filmes:', err);

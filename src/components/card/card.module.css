@@ -9,6 +9,7 @@
     overflow: hidden; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    max-width: 350px;
 }
 
 .card:hover {
@@ -83,5 +84,5 @@
 }
 
 .card:hover .imageContainer::after {
-    background-color: rgba(0, 0, 0, 0.15); /* Adiciona um sombreado suave ao passar o mouse */
+    background-color: rgba(0, 0, 0, 0.15); 
 }

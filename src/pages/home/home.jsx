@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, React } from 'react';
 import {fetchPopularFilms, fetchNewFilms} from "../../services/api.js";
 import Header from "../../components/header/header.jsx";
 import styles from "./home.module.css";

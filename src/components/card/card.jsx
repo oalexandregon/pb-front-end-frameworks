@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useAppContext } from "../../context";
+import React from "react";
 
 export default function Card({ data, type }) {
   const { favorites, toggleFavorite } = useAppContext();
