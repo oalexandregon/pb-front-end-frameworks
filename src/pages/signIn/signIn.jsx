@@ -44,7 +44,8 @@ const SignIn = () => {
             required
           />
         </div>
-        <button type="submit">Sign In</button>
+        <button type="button" className={styles.signUpButton} onClick={() => {navigate('/signUp')}}>Não tenho conta</button>
+        <button type="submit">Entrar</button>
       </form>
     </div>
   );

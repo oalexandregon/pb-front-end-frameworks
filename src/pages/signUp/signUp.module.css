@@ -67,3 +67,6 @@
     transform: scale(1.03);
   }
   
+  .signIpButton {
+    margin-bottom: 15px;
+  }

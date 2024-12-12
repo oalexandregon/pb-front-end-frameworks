@@ -67,3 +67,6 @@
     transform: scale(1.03);
   }
   
+  .signUpButton {
+    margin-bottom: 15px;
+  }
