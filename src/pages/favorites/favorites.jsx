@@ -14,7 +14,7 @@ export default function Favorites() {
       <h1 className={styles.favoritesTitle}>Meus Favoritos</h1>
       <div className={styles.wrapper}>
         {favorites.length ? (
-          favorites.map((item) => <Card key={item.id} data={item} />)
+          favorites.map((item) => <Card key={item.id} data={item} type={item.original_name ? "TV" : "movie"}/>)
         ) : (
           <p className={styles.noFavoritesMessage}>
             Você ainda não adicionou favoritos.
