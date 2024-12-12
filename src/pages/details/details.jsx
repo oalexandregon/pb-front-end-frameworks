@@ -4,7 +4,7 @@ import styles from "./details.module.css";
 
 import { fetchNewFilms, fetchPopularFilms, fetchTvSeries } from "../../services/api.js";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, React } from "react";
 
 export default function DetailsLatest() {
 

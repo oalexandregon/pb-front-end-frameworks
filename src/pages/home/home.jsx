@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, React } from 'react';
 import {fetchPopularFilms, fetchNewFilms} from "../../services/api.js";
 import Header from "../../components/header/header.jsx";
 import styles from "./home.module.css";
@@ -22,8 +22,6 @@ export default function Home() {
   
         setData(newFilmsData);
         setPopularData(popularFilmsData);
-        console.log("Novos",newFilmsData)
-        console.log("Populares",popularData);
       } catch (error) {
         console.error('Erro ao carregar os filmes:', error);
       } finally {

@@ -2,7 +2,8 @@ import styles from "./favorites.module.css";
 import { useAppContext } from "../../context";
 import Header from "../../components/header/header.jsx";
 import Footer from '../../components/footer/footer.jsx';
-import Card from "../../components/card/card.jsx"
+import Card from "../../components/card/card.jsx";
+import React from "react";
 
 export default function Favorites() {
   const { favorites } = useAppContext();

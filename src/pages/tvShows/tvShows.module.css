@@ -6,6 +6,7 @@
 
 .wrapper {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 5px;
     padding: 20px;
@@ -15,6 +16,7 @@
 
 .wrapper > h1 {
    margin-bottom: 20px; 
+   align-self: center;
 }
 
 
