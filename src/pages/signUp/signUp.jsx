@@ -40,6 +40,7 @@ const SignUp = () => {
             required
           />
         </div>
+        <button type="button" className={styles.signIpButton} onClick={() => {navigate('/signIn')}}>Já tenho conta</button>
         <button type="submit">Cadastrar</button>
       </form>
     </div>
